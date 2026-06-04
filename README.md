@@ -6,6 +6,11 @@ Check out the live website here: [DocChat](https://avishek.short.gy/docchat)
 
 ---
 
+> ### 🌟 Support the Project
+> If **DocChat** makes your life easier, please consider giving this repository a star.
+
+---
+
 ## Overview
 
 This project implements a Retrieval-Augmented Generation (RAG) system designed for documentation. It allows users to convert any documentation website into an interactive chat interface powered by large language models.
@@ -179,6 +184,12 @@ node chatWorker.js # Optional: Start the background worker for processing chat c
 - API keys are encrypted using a server-side encryption key
 - Keys are never stored in plaintext
 - Decryption happens only when making requests to providers
+
+---
+
+## Optional Features
+
+- **Long-term Memory (Mem0):** DocChat supports storing long-term interaction history. This feature is automatically enabled if you configure the `MEM0_API_KEY` in your `.env` file. If omitted or if Mem0 calls fail, the chat will continue to function normally without long-term context tracking.
 
 ---
 
