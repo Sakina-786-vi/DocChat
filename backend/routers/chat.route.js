@@ -30,6 +30,7 @@ import {
     forkSharedChat,
     qdrantCleanup,
     streamChatStatus,
+    downloadRawSource,
 } from "../controllers/chat.controller.js";
 
 const chatRouter = Router();
@@ -65,6 +66,9 @@ chatRouter
 chatRouter
     .route("/pages-indexed/:chatId")
     .get(verifyStrictJWT, validate(chatIdParamSchema), verifyChatOwnership, listAllPagesIndexed);
+chatRouter
+    .route("/:chatId/sources/:sourceId/raw")
+    .get(verifyStrictJWT, validate(chatIdParamSchema), verifyChatOwnership, downloadRawSource);
 chatRouter
     .route("/:chatId")
     .delete(verifyStrictJWT, validate(chatIdParamSchema), verifyChatOwnership, deleteChat);
